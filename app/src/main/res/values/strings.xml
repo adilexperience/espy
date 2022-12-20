@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">espy</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="signed">Signed</string>
+    <string name="already_have_an_account_login">Already have an account? Log In</string>
+    <string name="login">Login</string>
+    <string name="don_t_have_an_account_sign_in">Dont have account? Signup</string>
+    <string name="take_picture">Take picture</string>
+    <string name="start_timer">Start Timer</string>
+    <string name="stop_timer">Stop Timer</string>
+</resources>
