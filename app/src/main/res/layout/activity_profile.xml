@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F6F6"
+    android:orientation="vertical"
+    tools:context=".ProfileActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="Profile Management"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        app:navigationIcon="?homeAsUpIndicator"
+        android:theme="@style/ThemeOverlay.MaterialComponents.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:contentPadding="20dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="6dp"
+        android:layout_margin="20dp"
+        app:cardElevation="5dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="20dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/application_icon"
+                            android:adjustViewBounds="true"/>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/e_spy_security_by_artificial_intelligence"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:textColor="#9DB1BA"
+                            android:layout_marginBottom="2dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/prevent_theft_with_the_power_of_ai_on_your_phone_say_goodbye_to_theft_with_the_ultimate_mobile_security_solution"
+                            android:textSize="12sp"
+                            android:layout_marginBottom="10dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/manage_ai_operations_and_security_options"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#9DB1BA"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/delay_before_first_capture_by_detection_system"
+                        android:textSize="12sp"
+                        android:textColor="#9DB1BA"
+                        android:textStyle="bold"/>
+
+                    <EditText
+                        android:id="@+id/et_delay_seconds"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/interval_in_second"
+                        android:textSize="12sp"
+                        android:inputType="number"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/time_interval_in_seconds_to_process_camera_activity"
+                        android:textSize="12sp"
+                        android:textColor="#9DB1BA"
+                        android:textStyle="bold"/>
+
+                    <EditText
+                        android:id="@+id/et_interval_seconds"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/interval_in_second"
+                        android:textSize="12sp"
+                        android:inputType="number"
+                        android:layout_marginBottom="20dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/phone_number_to_notify_if_threat_detected"
+                        android:textSize="12sp"
+                        android:textColor="#9DB1BA"
+                        android:textStyle="bold"/>
+
+
+                    <EditText
+                        android:id="@+id/et_phone_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/phone_number"
+                        android:textSize="12sp"
+                        android:inputType="phone"
+                        android:layout_marginBottom="20dp"/>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_update_information"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="5dp"
+                        android:elevation="5dp"
+                        app:cardBackgroundColor="#9DB1BA"
+                        app:contentPadding="10dp"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/update_information"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"/>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

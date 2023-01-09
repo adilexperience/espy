@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".NotifyUserAndAlertActivity">
+
+    <ImageView
+        android:id="@+id/iv_detected_image"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="20dp"
+        android:adjustViewBounds="true"
+        />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Human detected"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/iv_detected_image"
+        />
+
+    <TextView
+        android:id="@+id/tv_response_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alert delivered to phone number 03001234567. You are advised to take precautionary measures"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_below="@id/tv_title"
+        android:gravity="center_horizontal"
+        />
+
+</RelativeLayout>

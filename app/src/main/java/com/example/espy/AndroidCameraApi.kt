@@ -2,6 +2,7 @@ package com.example.espy
 
 import android.Manifest
 import android.content.pm.PackageManager
+import android.graphics.BitmapFactory
 import android.graphics.ImageFormat
 import android.graphics.SurfaceTexture
 import android.hardware.camera2.*
@@ -10,6 +11,7 @@ import android.media.Image
 import android.media.ImageReader
 import android.media.ImageReader.OnImageAvailableListener
 import android.os.Bundle
+import android.os.Environment
 import android.os.Handler
 import android.os.HandlerThread
 import android.util.Log
@@ -20,6 +22,7 @@ import android.view.TextureView
 import android.view.TextureView.SurfaceTextureListener
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -33,6 +36,8 @@ open class AndroidCameraApi : AppCompatActivity() {
     private var startTimerButton: Button? = null
     private var stopTimerButton: Button? = null
     private var textureView: TextureView? = null
+
+    private lateinit var ivLastCaptured: ImageView
 
     companion object {
         private const val TAG = "AndroidCameraApi"
@@ -67,6 +72,9 @@ open class AndroidCameraApi : AppCompatActivity() {
         takePictureButton = findViewById<View>(R.id.btn_takepicture) as Button
         startTimerButton = findViewById<View>(R.id.btn_start_timer) as Button
         stopTimerButton = findViewById<View>(R.id.btn_stop_timer) as Button
+
+        ivLastCaptured = findViewById(R.id.ivLastCaptured)
+
         assert(takePictureButton != null)
         takePictureButton!!.setOnClickListener { takePicture() }
 
@@ -146,8 +154,9 @@ open class AndroidCameraApi : AppCompatActivity() {
         stopTimerButton?.isEnabled = false
         startTimerButton?.isEnabled = true
     }
+
     protected fun takePicture() {
-        if (null == cameraDevice) {
+        if (cameraDevice == null) {
             Log.e(TAG, "cameraDevice is null")
             return
         }
@@ -157,14 +166,12 @@ open class AndroidCameraApi : AppCompatActivity() {
                 cameraDevice!!.id
             )
             var jpegSizes: Array<Size>? = null
-            if (characteristics != null) {
-                jpegSizes =
-                    characteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP)!!
-                        .getOutputSizes(ImageFormat.JPEG)
-            }
+            jpegSizes =
+                characteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP)!!
+                    .getOutputSizes(ImageFormat.JPEG)
             var width = 640
-            var height = 480
-            if (jpegSizes != null && 0 < jpegSizes.size) {
+            var height = 680
+            if (jpegSizes != null && jpegSizes.isNotEmpty()) {
                 width = jpegSizes[0].width
                 height = jpegSizes[0].height
             }
@@ -188,7 +195,7 @@ open class AndroidCameraApi : AppCompatActivity() {
             val p = m.getPackageInfo(s!!, 0)
             s = p.applicationInfo.dataDir
             val time = System.currentTimeMillis()
-            val file = File("$s/$time.jpg")
+            val file = File("${getExternalFilesDir(Environment.DIRECTORY_PICTURES)}$s/$time.jpg")
             val readerListener: OnImageAvailableListener = object : OnImageAvailableListener {
                 override fun onImageAvailable(reader: ImageReader) {
                     var image: Image? = null
@@ -227,6 +234,15 @@ open class AndroidCameraApi : AppCompatActivity() {
                 ) {
                     super.onCaptureCompleted(session, request, result)
                     Toast.makeText(this@AndroidCameraApi, "Saved:$file", Toast.LENGTH_SHORT).show()
+                    Log.e("FILE PATH", file.toString())
+
+                    val myBitmap = BitmapFactory.decodeFile(file.absolutePath)
+                    runOnUiThread(Runnable {
+                        kotlin.run {
+                            ivLastCaptured.setImageBitmap(myBitmap)
+                            textureView!!.visibility = View.INVISIBLE
+                        }
+                    })
                     createCameraPreview()
                 }
             }

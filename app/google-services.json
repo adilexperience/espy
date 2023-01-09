@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "1064360515908",
-    "project_id": "final-year-project---espy",
-    "storage_bucket": "final-year-project---espy.appspot.com"
+    "project_number": "833490932767",
+    "project_id": "espy-6b4be",
+    "storage_bucket": "espy-6b4be.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1064360515908:android:57f036a3891140befadf11",
+        "mobilesdk_app_id": "1:833490932767:android:bbd0ead360d26d1b4a712a",
         "android_client_info": {
           "package_name": "com.example.espy"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1064360515908-acdpa87gtin4tla1662i0cldlgjbqt9m.apps.googleusercontent.com",
+          "client_id": "833490932767-88ahbnh6pubdo3vseab08ev0f00ovoom.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBQTg5wb5nH7Rad5n_Eiz3CC9GBehrVZkE"
+          "current_key": "AIzaSyD7ou3DNyRdsRo97_yV-VXt0aEuUUlTp7I"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1064360515908-acdpa87gtin4tla1662i0cldlgjbqt9m.apps.googleusercontent.com",
+              "client_id": "833490932767-88ahbnh6pubdo3vseab08ev0f00ovoom.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -1,67 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="20dp"
     tools:context=".LoginActivity">
 
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/etEmailAddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="15dp"
-            android:autofillHints="emailAddress"
-            android:ems="10"
-            android:hint="@string/email"
-            android:inputType="textEmailAddress"
-            android:minHeight="48dp"
-            android:textColorHint="#757575" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="91dp"
+            android:layout_marginBottom="100dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="10dp"
+            >
 
-        <EditText
-            android:id="@+id/etPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="15dp"
-            android:autofillHints="password"
-            android:ems="10"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            android:minHeight="48dp"
-            android:textColorHint="#757575" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/application_icon"
+                android:adjustViewBounds="true" />
 
-        <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:background="@color/teal_700"
-            android:text="@string/login" />
+        </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/tvRedirectSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign In"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="30sp" />
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:gravity="center_horizontal"
-            android:text="@string/don_t_have_an_account_sign_in"
-            android:textColor="@color/teal_700"
+            android:layout_marginBottom="20dp"
+            android:text="Welcome back. Login and start from where you left the last time."
+            android:textColor="#7E7E7E"
             android:textSize="16sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="#7E7E7E"
+            android:hint="Email Address"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_mail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="#7E7E7E"
+            android:hint="Password"
+            app:passwordToggleEnabled="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_uid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="5dp"
+            android:paddingVertical="10dp"
+            android:text="Login"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
+        <LinearLayout
+            android:id="@+id/ll_not_have_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Don't have an account? "/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Register now"
+                android:textStyle="bold"
+                android:textColor="@color/teal_700"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="200dp"
+        android:layout_height="180dp"
+        android:adjustViewBounds="true"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        app:lottie_rawRes="@raw/loading" />
+
+</FrameLayout>
