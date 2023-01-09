@@ -58,4 +58,9 @@
         app:layout_constraintEnd_toStartOf="@+id/texture"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_start_timer" />
+
+    <ImageView
+        android:id="@+id/ivLastCaptured"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

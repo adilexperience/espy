@@ -10,4 +10,19 @@
     <string name="take_picture">Take picture</string>
     <string name="start_timer">Start Timer</string>
     <string name="stop_timer">Stop Timer</string>
+    <string name="action_profile">Manage profile</string>
+    <string name="action_logout">Logout</string>
+    <string name="update_information">Update Information</string>
+    <string name="phone_number">Phone number</string>
+    <string name="phone_number_to_notify_if_threat_detected">Phone number to notify if threat detected</string>
+    <string name="interval_in_second">Interval in second</string>
+    <string name="time_interval_in_seconds_to_process_camera_activity">Time Interval in seconds to process camera activity</string>
+    <string name="manage_ai_operations_and_security_options">Manage AI operations and security options:</string>
+    <string name="prevent_theft_with_the_power_of_ai_on_your_phone_say_goodbye_to_theft_with_the_ultimate_mobile_security_solution">Prevent theft with the power of AI on your phone. Say goodbye to theft with the ultimate mobile security solution</string>
+    <string name="e_spy_security_by_artificial_intelligence">E-SPY - Security By Artificial Intelligence</string>
+    <string name="theft_prevention_made_smarter_with_ai_cameras">Theft prevention made smarter with AI cameras</string>
+    <string name="e_spy_theft_protection">E-Spy Theft Protection</string>
+    <string name="enter_phone_number">Enter phone number</string>
+    <string name="delay_before_first_capture">Delay before first capture</string>
+    <string name="delay_before_first_capture_by_detection_system">Delay before first capture by detection system</string>
 </resources>
